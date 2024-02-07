@@ -1,0 +1,18 @@
+name: push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-node:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Check Node.js version
+        run: node --version
+      - name: Check npm version
+        run: npm --version
